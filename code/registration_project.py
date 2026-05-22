@@ -93,13 +93,13 @@ def intensity_based_registration_demo():
 def intensity_based_registration_project(): # Project version of intensity_based_registration_demo
 
 # read the fixed and moving images
-    # change these in order to read different images
+    # change these in order to read different images: 1_1...., 1_1_d...., 2_1.....,  2_1_d... etc.
     I = plt.imread('../data/image_data/3_1_t1.tif')
     Im = plt.imread('../data/image_data/3_1_t1_d.tif')
 
     # initial values for the parameters
     t_y=0.3
-    x = np.array([0., 1., 1., 0., 0., 0., t_y]) #change t_y parameter to experiment
+    x = np.array([0., 1., 1., 0., 0., 0., t_y]) #change t_y parameter to experiment (0.0, 0.1, 0.2, 0.3)
 
     # the similarity function
     fun = lambda x: reg.affine_corr(I, Im, x, return_transform=False)
